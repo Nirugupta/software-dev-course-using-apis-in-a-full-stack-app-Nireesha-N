@@ -9,7 +9,45 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Main {
 
-    // TODO #2
+    private double temp;
+    @JsonProperty("feels_like")
+    private double feelsLike;
+    private double pressure;
+    private double humidity;
+
+    public double getTemp() {
+        return temp;
+    }
+
+    public void setTemp(double temp) {
+        this.temp = temp;
+    }
+
+    public double getFeelsLike() {
+        return feelsLike;
+    }
+
+    public void setFeelsLike(double feelsLike) {
+        this.feelsLike = feelsLike;
+    }
+
+    public double getPressure() {
+        return pressure;
+    }
+
+    public void setPressure(double pressure) {
+        this.pressure = pressure;
+    }
+
+    public double getHumidity() {
+        return humidity;
+    }
+
+    public void setHumidity(double humidity) {
+        this.humidity = humidity;
+    }
+
+// TODO #2
     //  Take a look at the expected JSON payload on the response for
     //  a call to the current weather data at
     //  https://openweathermap.org/api/current?collection=current_forecast.

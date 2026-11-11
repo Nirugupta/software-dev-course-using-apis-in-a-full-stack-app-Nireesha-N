@@ -1,12 +1,45 @@
 package org.launchcode.weather_dashboard.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.List;
 
 // This class represents the collective properties we want from the
 // full JSON payload received from OpenWeatherAPI.
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class WeatherData {
+
+    private String name;
+    @JsonProperty("weather")
+    private List<Weather> weatherArray;
+    @JsonProperty("main")
+    private Main mainObject;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public List<Weather> getWeatherArray() {
+        return weatherArray;
+    }
+
+    public void setWeatherArray(List<Weather> weatherArray) {
+        this.weatherArray = weatherArray;
+    }
+
+    public Main getMainObject() {
+        return mainObject;
+    }
+
+    public void setMainObject(Main mainObject) {
+        this.mainObject = mainObject;
+    }
 
     // TODO #3
     //  Take a look at the expected JSON payload on the response for
